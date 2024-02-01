@@ -44,12 +44,10 @@ const convertToRoman = (input) => {
   let result = "";
   let inputValue = input;
 
-  while (inputValue > 0) {
-    for (let i = 0; i < decimalNumbers.length; i++) {
-      if (decimalNumbers[i] <= inputValue) {
-        result += romanNumerals[i];
-        inputValue -= decimalNumbers[i];
-      }
+  for (let i = 0; i < decimalNumbers.length; i++) {
+    while (decimalNumbers[i] <= inputValue) {
+      result += romanNumerals[i];
+      inputValue -= decimalNumbers[i];
     }
   }
 
